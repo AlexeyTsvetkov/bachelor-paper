@@ -1,0 +1,248 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\providecommand*{\href}[2]{{\small #2}}
+\providecommand*{\url}[1]{{\small #1}}
+\providecommand*{\BibUrl}[1]{\url{#1}}
+\providecommand{\BibAnnote}[1]{}
+\providecommand*{\BibEmph}[1]{#1}
+
+\bibitem{wikisent}
+\selectlanguageifdefined{russian}
+Википедия. Анализ тональности текста
+  [{Текст}]~//
+  [http://ru.wikipedia.org/wiki/анализ\_тональности\_текста].
+  "---
+\newblock [{Б.\ м.}~: {б.\ и.}].
+
+\bibitem{dimresearch}
+\selectlanguageifdefined{english}
+The Impact Of Customer Service On Customer Lifetime Value [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL:
+  \BibUrl{http://www.zendesk.com/resources/customer-service-and-lifetime-customer-value}.
+
+\bibitem{aif}
+\selectlanguageifdefined{russian}
+Любителей покупать в интернете не отвадить
+  обманом [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}]. "---
+\newblock URL: \BibUrl{http://www.aif.ru/mymoney/article/54692}.
+
+\bibitem{medianation}
+\selectlanguageifdefined{russian}
+Как отзывы на Яндекс.Маркет влияют на
+  продажи [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}]. "---
+\newblock URL:
+  \BibUrl{http://www.medianation.ru/blog/kak-otzyvy-na-yandeks-market-vliyayut-na-prodazhi.php}.
+
+\bibitem{twitter_users}
+\selectlanguageifdefined{russian}
+Аудитория Twitter выросла на 60 миллионов
+  человек за год [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}]. "---
+\newblock URL: \BibUrl{http://lenta.ru/news/2013/03/21/twohundred}.
+
+\bibitem{Pang2008}
+\selectlanguageifdefined{english}
+\BibEmph{Pang,~Bo}. Opinion mining and sentiment analysis [Text]~/ Bo~Pang,
+  Lillian~Lee~// \BibEmph{Foundations and trends in information retrieval}.
+  "---
+\newblock 2008. "---
+\newblock Vol.~2, no. 1-2. "---
+\newblock P.~1--135. "---
+\newblock URL: \BibUrl{http://dl.acm.org/citation.cfm?id=1454712}.
+
+\bibitem{Go2009}
+\selectlanguageifdefined{english}
+\BibEmph{Go,~Alec}. Twitter sentiment classification using distant supervision
+  [Text]~/ Alec~Go, Richa~Bhayani, Lei~Huang~// \BibEmph{CS224N Project Report,
+  Stanford}. "---
+\newblock 2009. "---
+\newblock P.~1--12.
+
+\bibitem{Liu2010}
+\selectlanguageifdefined{english}
+\BibEmph{Liu,~Bing}. Sentiment analysis: a multifaceted problem [Text]~/
+  Bing~Liu~// \BibEmph{IEEE Intelligent Systems}. "---
+\newblock 2010. "---
+\newblock Vol.~25, no.~3. "---
+\newblock P.~76--80.
+
+\bibitem{wiki_middling}
+\selectlanguageifdefined{russian}
+Викисловарь. Посредственный [{Текст}]~//
+  [http://ru.wiktionary.org/wiki/посредственный]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}].
+
+\bibitem{Liu2010a}
+\selectlanguageifdefined{english}
+\BibEmph{Liu,~Bing}. Sentiment analysis and subjectivity [Text]~/ Bing~Liu~//
+  \BibEmph{Handbook of natural language processing}. "---
+\newblock 2010. "---
+\newblock Vol.~2. "---
+\newblock P.~568.
+
+\bibitem{Wiegand2010}
+\selectlanguageifdefined{english}
+A survey on the role of negation in sentiment analysis [Text]~/
+  Michael~Wiegand, Alexandra~Balahur, Benjamin~Roth [et~al.]~// Proceedings of
+  the workshop on negation and speculation in natural language processing~/
+  Association for Computational Linguistics. "---
+\newblock [S.\ l.~: s.\ n.], 2010. "---
+\newblock P.~60--68. "---
+\newblock URL: \BibUrl{http://dl.acm.org/citation.cfm?id=1858970}.
+
+\bibitem{Tsur2010}
+\selectlanguageifdefined{english}
+\BibEmph{Tsur,~Oren}. ICWSM--A great catchy name: Semi-supervised recognition
+  of sarcastic sentences in online product reviews [Text]~/ Oren~Tsur,
+  Dmitry~Davidov, Ari~Rappoport~// Proceedings of the fourth international AAAI
+  conference on weblogs and social media. "---
+\newblock [S.\ l.~: s.\ n.], 2010. "---
+\newblock P.~162--169. "---
+\newblock URL:
+  \BibUrl{http://www.aaai.org/ocs/index.php/ICWSM/ICWSM10/paper/viewFile/1495/1851}.
+
+\bibitem{Saif2012}
+\selectlanguageifdefined{english}
+\BibEmph{Saif,~Hassan}. Alleviating data sparsity for twitter sentiment
+  analysis [Text]~/ Hassan~Saif, Yulan~He, Harith~Alani~// The 2nd Workshop on
+  Making Sense of Microposts. "---
+\newblock [S.\ l.~: s.\ n.], 2012.
+
+\bibitem{streaming}
+\selectlanguageifdefined{english}
+Twitter Streaming API [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL: \BibUrl{https://dev.twitter.com/docs/streaming-apis}.
+
+\bibitem{Lin2012}
+\selectlanguageifdefined{english}
+\BibEmph{Lin,~Jimmy}. Large-scale machine learning at twitter [Text]~/
+  Jimmy~Lin, Alek~Kolcz~// Proceedings of the 2012 international conference on
+  Management of Data~/ ACM. "---
+\newblock [S.\ l.~: s.\ n.], 2012. "---
+\newblock P.~793--804. "---
+\newblock URL: \BibUrl{http://dl.acm.org/citation.cfm?id=2213958}.
+
+\bibitem{sentiment_mapreduce}
+\selectlanguageifdefined{english}
+Basic sentiment analysis using MapReduce [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL:
+  \BibUrl{http://www.alex-hanna.com/tworkshops/lesson-6-basic-sentiment-analysis}.
+
+\bibitem{Irokez2012}
+\selectlanguageifdefined{russian}
+Обучаем компьютер чувствам (sentiment analysis
+  по-русски) [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}], 2012. "---
+\newblock URL: \BibUrl{http://habrahabr.ru/post/149605/}.
+
+\bibitem{rule_romip1}
+\selectlanguageifdefined{english}
+\BibEmph{Kan,~Dmitry}. Rule-based approach to sentiment analysis [Text]~/
+  Dmitry~Kan~// По материалам ежегодной
+  Международной конференции «Диалог». "---
+\newblock Компьютерная лингвистика и
+  интеллектуальные технологии no.~11. "---
+\newblock [S.\ l.~: s.\ n.], 2012.
+
+\bibitem{rule_romip2}
+\selectlanguageifdefined{russian}
+\BibEmph{Паничева,~П.} Сиcтема cентиментного
+  анализа ATEX, оcнованная на правилах, при
+  обработке текcтов различных тематик
+  [{Текст}]~/ П.~Паничева~// По материалам
+  ежегодной Международной конференции
+  «Диалог». "---
+\newblock Компьютерная лингвистика и
+  интеллектуальные технологии {№}~12. "---
+\newblock [{Б.\ м.}~: {б.\ и.}], 2013.
+
+\bibitem{sentiwordnet}
+\selectlanguageifdefined{english}
+SentiWordNet [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL: \BibUrl{http://sentiwordnet.isti.cnr.it}.
+
+\bibitem{anew}
+\selectlanguageifdefined{english}
+Affective Norms for English Words (ANEW) [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL: \BibUrl{http://csea.phhp.ufl.edu/media/anewmessage.html}.
+
+\bibitem{Manning2008}
+\selectlanguageifdefined{english}
+\BibEmph{Manning,~Christopher~D}. Introduction to information retrieval
+  [Text]~/ Christopher~D~Manning, Prabhakar~Raghavan, Hinrich~Sch{\"u}tze. "---
+\newblock [S.\ l.]~: Cambridge University Press Cambridge, 2008. "---
+\newblock Vol.~1.
+
+\bibitem{wiki_vectorspace}
+\selectlanguageifdefined{russian}
+Википедия. Векторная модель [{Текст}]~//
+  [http://ru.wikipedia.org/wiki/Векторная\_модель]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}].
+
+\bibitem{classifier_performance}
+\selectlanguageifdefined{russian}
+Оценка классификатора (точность, полнота,
+  F-мера) [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}]. "---
+\newblock URL:
+  \BibUrl{http://bazhenov.me/blog/2012/07/21/classification-performance-evaluation.html}.
+
+\bibitem{naive_bayes}
+\selectlanguageifdefined{russian}
+Наивный байесовский классификатор
+  [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}]. "---
+\newblock URL: \BibUrl{http://bazhenov.me/blog/2012/06/11/naive-bayes.html}.
+
+\bibitem{Pang2002}
+\selectlanguageifdefined{english}
+\BibEmph{Pang,~Bo}. Thumbs up?: sentiment classification using machine learning
+  techniques [Text]~/ Bo~Pang, Lillian~Lee, Shivakumar~Vaithyanathan~//
+  Proceedings of the ACL-02 conference on Empirical methods in natural language
+  processing-Volume 10~/ Association for Computational Linguistics. "---
+\newblock [S.\ l.~: s.\ n.], 2002. "---
+\newblock P.~79--86. "---
+\newblock URL: \BibUrl{http://dl.acm.org/citation.cfm?id=1118704}.
+
+\bibitem{Sanders}
+\selectlanguageifdefined{english}
+\BibEmph{Sanders,~Niek}. Twitter Sentiment Corpus [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL: \BibUrl{http://www.sananalytics.com/lab/twitter-sentiment}.
+
+\bibitem{SemEval2013}
+\selectlanguageifdefined{english}
+SemEval-2013: Sentiment Analysis in Twitter [Text]. "---
+\newblock [S.\ l.~: s.\ n.], 2013. "---
+\newblock URL: \BibUrl{http://www.cs.york.ac.uk/semeval-2013/task2/}.
+
+\bibitem{emoticons}
+\selectlanguageifdefined{english}
+Wikipedia. List of emoticons [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL: \BibUrl{http://en.wikipedia.org/wiki/List_of_emoticons}.
+
+\bibitem{dictionary}
+\selectlanguageifdefined{english}
+Opinion Lexicon [Text]. "---
+\newblock [S.\ l.~: s.\ n.]. "---
+\newblock URL:
+  \BibUrl{http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html#lexicon}.
+
+\bibitem{mutualinformation}
+\selectlanguageifdefined{russian}
+Взаимная информация [{Текст}]. "---
+\newblock [{Б.\ м.}~: {б.\ и.}]. "---
+\newblock URL:
+  \BibUrl{http://bazhenov.me/blog/2012/12/10/feature-selection.html}.
+
+\end{thebibliography}

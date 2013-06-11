@@ -19,30 +19,39 @@
 \subsection{Модуль classifiers}
 \begin{figure}[!ht]
 \begin{center}
-\includesvg[]{../resources/uml/diagram_test.svg}
-\caption{Диаграмма классов для классификаторов}
-\label{gr:test}
-\end{center}
-\end{figure} 
-
-\subsection{Модуль classifiers}
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/uml/diag1.png}
-\caption{Диаграмма классов для классификаторов}
+\includegraphics[scale=0.4, trim=1.5mm 2mm 2mm 2.6mm, clip]{../resources/uml/diag1.png}
+\caption{Диаграмма классов классификаторов}
 \label{gr:classifiers}
 \end{center}
 \end{figure} 
 
 \begin{figure}[!Ht]
 \begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/uml/diag2.png}
-\caption{Диаграмма классов для feature\_extractor'ов}
+\includegraphics[scale=0.5, trim=0mm 0mm 0mm 1.5mm, clip]{../resources/uml/diag2.png}
+\caption{Диаграмма классов для выделителей признаков}
 \label{gr:extractors}
 \end{center}
 \end{figure} 
 
-\newpage
+\begin{figure}[!Ht]
+\begin{center}
+\includegraphics[scale=0.6, trim=1.2mm 10mm 0mm 1mm, clip]{../resources/uml/diag3.png}
+\caption{Диаграмма классов для предобработчиков}
+\label{gr:preprocessors}
+\end{center}
+\end{figure} 
+
+\clearpage{}
+
+\subsection{Модуль twitter\_api\_wrapper}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/uml/diag4.png}
+\caption{Диаграмма классов клиента для Twitter}
+\label{gr:preprocessors}
+\end{center}
+\end{figure} 
+
 \subsection{Веб-приложение}
 Веб-приложение было разработано при помощи веб-фреймворка Django.
 Интерфейс разработан с помощи css-фреймворка ZURB Foundation.
@@ -51,7 +60,7 @@
 сущности, интересующей его. 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/screens/1.png}
+\includegraphics[scale=0.4, trim=20mm 60mm 20mm 10mm, clip]{../resources/screens/main.png}
 \caption{Главная страница приложения}
 \label{gr:mainpage}
 \end{center}
@@ -61,11 +70,11 @@
 После того, как пользователь кликнул на кнопку поиска, происходит ajax-запрос
 к серверу. Сервер возвращает уже классифицированные сообщения в 
 формате JSON. По умолчанию показываются последние 400 сообщений.
-Сообщения, имеющие отрицательную тональность подсвечены красным, положительную --- зелёным, нейтральную --- тёмно-синим.
+
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/screens/2.png}
-\caption{Вкладка сообщений}
+\includegraphics[scale=0.4, trim=20mm 60mm 20mm 10mm, clip]{../resources/screens/tweets.png}
+\caption{Вкладка сообщений. Сообщения, имеющие отрицательную тональность подсвечены красным, положительную --- зелёным, нейтральную --- тёмно-синим.}
 \label{gr:messages}
 \end{center}
 \end{figure} 
@@ -75,7 +84,7 @@
 об объекте поиска.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/screens/3.png}
+\includegraphics[scale=0.4, trim=20mm 60mm 20mm 10mm, clip]{../resources/screens/statistics.png}
 \caption{Вкладка статистики}
 \label{gr:stats}
 \end{center}
@@ -87,8 +96,10 @@
 Размер слова пропорционален логарифму частоты употребления.
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/screens/4.png}
+\includegraphics[scale=0.4, trim=20mm 60mm 20mm 10mm, clip]{../resources/screens/summary.png}
 \caption{Вкладка сводки}
 \label{gr:summary}
 \end{center}
 \end{figure} 
+
+\clearpage{}

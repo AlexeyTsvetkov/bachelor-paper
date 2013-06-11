@@ -20,7 +20,6 @@
 \usepackage{totcount}
 \usepackage{url}
 \usepackage{xspace}
-\usepackage{svg}
 
 \definecolor{darkblue}{rgb}{0,0,.5}
 \usepackage[colorlinks, linkcolor=black, menucolor=black, citecolor=black, urlcolor=darkblue]{hyperref}
@@ -42,10 +41,10 @@
 \vspace{\abovecaptionskip}%
 \sbox{\@tempboxa}{\large #1.~#2}
 \ifdim \wd\@tempboxa >\hsize
-{\large #1.~#2}\par
+{\large #1 --- #2}\par
 \else
 \global\@minipagefalse
-\hbox to \hsize {\hfill {\large #1.~#2}\hfill}%
+\hbox to \hsize {\hfill {\large #1 --- #2}\hfill}%
 \fi
 \vspace{\belowcaptionskip}}
 
@@ -82,8 +81,8 @@
 \def\bibitem{\stepcounter{bibcnt}\oldbibitem}
 \regtotcounter[auxfile=totals.aux]{page}
 
-
 \begin{document}
+\def\figurename{Рисунок}
 \sloppy
 \input{title}
 \newpage
