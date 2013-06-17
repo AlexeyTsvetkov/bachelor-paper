@@ -1,41 +1,159 @@
 \section{Программная реализация}
 
+\subsection{Структура пакетов}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.6, clip]{../resources/uml/packages.png}
+\caption{Диаграмма пакетов}
+\label{gr:packages}
+\end{center}
+\end{figure} 
+
 Весь проект реализован с использованием языка программирования Python. Программная реализация состоит из трёх частей:
 \begin{enumerate}
 \item 
-Модуль classifiers содержит классы и функции для работы с
+Пакет Classifiers содержит классы и функции для работы с
 алгоритмами классификации, для выбора признаков,
 перекрёстной проверки, а также для работы с корпусами данных.
 
 \item 
-Модуль twitter\_api\_wrapper содержит класс-обёртку для 
+Пакет Twitter\_API\_Wrapper содержит класс-обёртку для 
 доступа Twitter API. Использует библиотеку python-oauth2.
 
 \item 
-Веб-приложение twitter\_sentiment служит для поиска
-мнений в социальной сети Twitter. Веб-приложение написано на Django.
+Веб-приложение Sentiment\_WEB служит для поиска
+мнений в социальной сети Twitter. 
 \end{enumerate}
 
-\subsection{Модуль classifiers}
-\begin{figure}[!ht]
+\subsection{Пакет Сlassifiers}
+
+\subsubsection{Классификаторы}
+
+Все классификаторы наследуются от базового класса ClassifierBase. 
+Он имеет ссылки на экземпляры подклассов PreprocessorBase (предобработчики)
+и FeatureExtractorBase (выделители признаков и выборщики признаков).
+Это удобно, так как для сохранения классификатора на
+диск (и для последующей загрузки) достаточно сериализовать 
+один объект (сериализация осуществляется с помощью
+стандартной библиотеки pickle).
+
+В классе ClassifierBase определены следующие методы:
+\begin{description}
+
+\item[learn(documents, labels)] \hfill \\
+Процедура обучения.
+Принимает на вход массив документов обучающей выборки
+и массив соответствующих документам классов 
+(классами могут быть как строки, так и числа).
+Определяется в наследниках.
+
+\item[classify\_one(document)] \hfill \\
+Функция классификации одного документа.
+Принимает на вход документ (строку), возвращает класс,
+предсказанный в соответствии с моделью.
+Возвращает класс с максимальным значением
+функции get\_conditional\_probability(document, class).
+
+\item[classify\_batch(documents)] \hfill \\
+Функция классификации множества документов.
+Принимает на вход массив строк, возвращает массив классов.
+
+\item[get\_conditional\_probability(document, class)] \hfill \\
+Возвращает вероятность того, что документ принадлежит классу в соответствии с параметрами модели. Определяется в наследниках.
+
+\item[get\_encoded\_labels(labels)] \hfill \\
+Кодирует классы обучающей выборки в диапазон числами
+от $0$ до $n-1$ ($n$ --- число уникальных классов).
+
+\end{description}
+
+\vspace{0.7cm}
+
+В классе ClassifierBase определены следующие поля:
+\begin{description}
+
+\item[preprocessor] \hfill \\
+Предобработчик нормализует документ. 
+
+\item[feature\_extractor] \hfill \\
+Выделитель признаков преобразует строку в признаковый вектор).
+
+\item[class\_index] \hfill \\
+Ассоциативный массив. Ключ --- оригинальный класс,
+значение --- индекс от 0 до $n-1$.
+
+\item[classes] \hfill \\
+Массив уникальных классов.
+
+\end{description}
+
+\begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.4, trim=1.5mm 2mm 2mm 2.6mm, clip]{../resources/uml/diag1.png}
+\includegraphics[scale=0.6, clip]{../resources/uml/classifiers_classes.png}
 \caption{Диаграмма классов классификаторов}
 \label{gr:classifiers}
 \end{center}
 \end{figure} 
 
-\begin{figure}[!Ht]
+\clearpage{}
+
+\subsubsection{Выделители признаков}
+
+Классификаторы работают с векторным представлением документа. 
+Подклассы класса FeatureExtractorBase преобразовывают
+текстовый документ в признаковый вектор (массив).
+
+В нём определены следующие методы:
+\begin{description}
+
+\item[learn(documents, labels)] \hfill \\
+Процедура обучения. Определяется в потомках.
+
+\item[extract(document)] \hfill \\
+Функция извлечения признаков. Принимает на вход строку,
+возвращает признаковый вектор (массив).
+
+\item[get\_feature\_count()] \hfill \\
+Возвращает размер признакового вектора.
+
+\end{description}
+
+Выбор признаков осуществляется с помощью подкласса FeatureSelectorBase, который является декоратором FeatureExtractorBase. Таким образом, очень просто
+добавить или убрать отбор признаков (классификатор
+не знает, с чем он работает).
+
+Извлечение n-грамм осуществляется с помощью
+подкласса NgrammFeatureExtractor. В конструкторе ему передаётся массив требуемых n (можно использовать 1-граммы, 2-граммы и т.д. вместе или по-отдельности).
+
+Подклассы NgrammFeatureExtractorBoolean и NgrammFeatureExtractorCount отличаются способом
+определения веса у признаков.
+
+\begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.5, trim=0mm 0mm 0mm 1.5mm, clip]{../resources/uml/diag2.png}
+\includegraphics[scale=0.6, clip]{../resources/uml/feature_extractors_classes.png}
 \caption{Диаграмма классов для выделителей признаков}
 \label{gr:extractors}
 \end{center}
-\end{figure} 
+\end{figure}
 
-\begin{figure}[!Ht]
+\clearpage{}
+
+\subsubsection{Предобработчики}
+
+Предобработчики выполняют нормализацию текста.
+
+Во всех подклассах PreprocessorBase определён метод {\bf preprocess}, который получает на вход строку, применяет
+к ней нормализующее действие, и возвращает нормализованную строку.
+
+Для возможности гибкого изменения порядка нормализации
+все атомарные действия реализованны отдельными классами,
+которые объединяются с помощью компоновщика
+CombinedPreprocessor.
+
+\begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.6, trim=1.2mm 10mm 0mm 1mm, clip]{../resources/uml/diag3.png}
+\includegraphics[scale=0.6, clip]{../resources/uml/preprocessor_classes.png}
 \caption{Диаграмма классов для предобработчиков}
 \label{gr:preprocessors}
 \end{center}
@@ -43,10 +161,10 @@
 
 \clearpage{}
 
-\subsection{Модуль twitter\_api\_wrapper}
-\begin{figure}[!ht]
+\subsection{Пакет Twitter\_API\_Wrapper}
+\begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.4, trim=0mm 0mm 0mm 0mm, clip]{../resources/uml/diag4.png}
+\includegraphics[scale=0.6, clip]{../resources/uml/twitter_classes.png}
 \caption{Диаграмма классов клиента для Twitter}
 \label{gr:preprocessors}
 \end{center}
